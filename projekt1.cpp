@@ -7,11 +7,17 @@ int silnia(int liczba){
 	else return silnia(liczba-1)*liczba;
 }
 
+bool czyPierwsza(int a){
+	float sa=sqrt(a);
+	for(int i=2;i<=sa;i++)if(a%i==0)return false;
+	return true;
+}
+
 int main(){
 int a,menu;
 cout<<"Podaj liczbe: ";
 cin>>a;
-cout<<"Co mam zrobic z ta liczba? (1 - oblicz silnie, 2 - oblicz kwadrat, 3 - oblicz pierwiastek kwadratowy): ";
+cout<<"Co mam zrobic z ta liczba?"<<endl<<"(1 - oblicz silnie, 2 - oblicz kwadrat, 3 - oblicz pierwiastek kwadratowy, 4 - sprawdz czy pierwsza): ";
 cin>>menu;
 switch(menu){
 	case 1:
@@ -22,6 +28,9 @@ switch(menu){
 	break;
 	case 3:
 	cout<<sqrt(a)<<endl;
+	break;
+	case 4:
+	cout<<czyPierwsza(a)<<endl;
 	break;
 	default:
 	cout<<"Nastepnym razem podaj poprawna opcje menu"<<endl;
